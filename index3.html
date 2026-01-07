@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Halaman Index 3</title>
+
+<style>
+/* Efek kedap-kedip */
+@keyframes kedip {
+  0%   { opacity: 1; }
+  50%  { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.teks-berjalan {
+  font-size: 32px;
+  font-weight: bold;
+  color: red;
+  animation: kedip 1s infinite;
+}
+</style>
+</head>
+
+<body>
+
+<!-- TEKS BERJALAN + KEDAP KEDIP -->
+<marquee behavior="scroll" direction="left">
+  <span class="teks-berjalan">
+    🎉 Selamat datang kembali!
+  </span>
+</marquee>
+
+
+</body>
+</html>
+
+
+<title>Katalog Produk UMKM</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.katalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.whatsapp {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+/* tombol bawah */
+.next {
+  text-align: center;
+  margin: 30px;
+}
+
+.next button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* admin */
+#admin {
+  display: none;
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#admin input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+#admin button {
+  padding: 8px 15px;
+}
+
+.edit { background: orange; color: white; }
+.hapus { background: red; color: white; }
+</style>
+</head>
+
+<body>
+
+<h1>Menambahkan Produk</h1>
+
+<!-- KATALOG -->
+<div class="katalog" id="katalog"></div>
+
+<!-- TOMBOL WEBSITE SELANJUTNYA -->
+<div class="next">
+  <button onclick="bukaAdmin()">➡ Website Selanjutnya (Admin)</button>
+</div>
+
+<!-- MENU ADMIN -->
+<div id="admin">
+  <h2>Menu Admin</h2>
+
+  <input type="hidden" id="indexEdit">
+  <input type="text" id="nama" placeholder="Nama Produk">
+  <input type="text" id="deskripsi" placeholder="Deskripsi">
+  <input type="number" id="harga" placeholder="Harga">
+  <input type="text" id="gambar" placeholder="images/produk.jpg">
+
+  <button onclick="simpan()">Simpan Produk</button>
+</div>
+
+<script>
+let dataProduk = [
+  {
+    nama: "Sepatu",
+    deskripsi: "Bahan lembut dari kain katun",
+    harga: 200000,
+    gambar: "img/sepatu.jpg"
+  }
+];
+
+const nomorWA = "6281234567890";
+
+function tampilkan() {
+  let html = "";
+  dataProduk.forEach((p, i) => {
+    html += `
+      <div class="card">
+        <img src="${p.gambar}">
+        <h4>${p.nama}</h4>
+        <p>${p.deskripsi}</p>
+        <b>Rp ${p.harga}</b><br>
+        <a class="whatsapp" target="_blank"
+           href="https://wa.me/${nomorWA}?text=Saya%20ingin%20membeli%20${p.nama}">
+           WhatsApp
+        </a><br><br>
+        <button class="edit" onclick="edit(${i})">Edit</button>
+        <button class="hapus" onclick="hapus(${i})">Hapus</button>
+      </div>
+    `;
+  });
+  document.getElementById("katalog").innerHTML = html;
+}
+
+function bukaAdmin() {
+  document.getElementById("admin").style.display = "block";
+  document.getElementById("admin").scrollIntoView({behavior:"smooth"});
+}
+
+function simpan() {
+  let nama = document.getElementById("nama").value;
+  let deskripsi = document.getElementById("deskripsi").value;
+  let harga = document.getElementById("harga").value;
+  let gambar = document.getElementById("gambar").value;
+  let idx = document.getElementById("indexEdit").value;
+
+  let obj = { nama, deskripsi, harga, gambar };
+
+  if (idx === "") {
+    dataProduk.push(obj);
+  } else {
+    dataProduk[idx] = obj;
+    document.getElementById("indexEdit").value = "";
+  }
+
+  reset();
+  tampilkan();
+}
+
+function edit(i) {
+  let p = dataProduk[i];
+  nama.value = p.nama;
+  deskripsi.value = p.deskripsi;
+  harga.value = p.harga;
+  gambar.value = p.gambar;
+  indexEdit.value = i;
+  bukaAdmin();
+}
+
+function hapus(i) {
+  if (confirm("Hapus produk ini?")) {
+    dataProduk.splice(i, 1);
+    tampilkan();
+  }
+}
+
+function reset() {
+  nama.value = "";
+  deskripsi.value = "";
+  harga.value = "";
+  gambar.value = "";
+}
+
+tampilkan();
+</script>
+
+</body>
+</html>
+
+
+<div class="next">
+  <a href="index.html">⬅ Kembali ke Katalog</a>
+</div>

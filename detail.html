@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Detail Produk</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="detail"></div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+const products = JSON.parse(localStorage.getItem("products"));
+const p = products.find(x => x.id == id);
+
+document.getElementById("detail").innerHTML = `
+  <img src="${p.image}">
+  <h2>${p.name}</h2>
+  <p>${p.description}</p>
+  <p>Harga: Rp ${p.price}</p>
+  <a href="https://wa.me/0821-3241-8789?text=Saya%20ingin%20pesan%20${p.name}">
+    Pesan via WhatsApp
+  </a>
+`;
+</script>
+
+</body>
+</html>

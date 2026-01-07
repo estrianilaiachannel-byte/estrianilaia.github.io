@@ -1,0 +1,268 @@
+/* HALAMAN UTAMA */
+body.welcome-page {
+    margin: 0;
+    height: 100vh;
+    background: #fc0d0d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* CARD PUTIH */
+.welcome-card {
+    background: rgb(7, 252, 252);
+    padding: 40px 50px;
+    border-radius: 18px;
+    text-align: center;
+    width: 90%;
+    max-width: 420px;
+    box-shadow: 0 10px 25px rgba(49, 7, 235, 0.397);
+}
+
+/* TEKS BERJALAN */
+.running-text {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-bottom: 20px;
+}
+
+.running-text span {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #e41e95;
+    animation: jalan 10s linear infinite;
+}
+
+@keyframes jalan {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* TEKS BIASA */
+.sub-text {
+    color: #fa7a03;
+    margin-bottom: 25px;
+}
+
+/* TEKS LOGIN ADMIN KEDIP PELAN */
+.login-blink {
+    font-size: 18px;
+    font-weight: bold;
+    color: #0408ef;
+    text-decoration: none;
+    animation: kedip 2.5s infinite;
+}
+
+@keyframes kedip {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f3f3;
+  margin: 0;
+}
+
+.judul {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.produk-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card h3 {
+  font-size: 15px;
+  margin: 8px 0 5px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #444;
+  margin: 5px 0;
+}
+
+.card h4 {
+  margin: 6px 0;
+}
+
+.wa {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 15px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+}
+
+.judul {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ADMIN */
+.admin {
+  background: white;
+  padding: 15px;
+  border-radius: 15px;
+  height: fit-content;
+  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+}
+
+.admin h3 {
+  margin-top: 0;
+}
+
+.admin input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.admin button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+}
+
+.judul {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* ADMIN */
+.admin {
+  background: white;
+  padding: 15px;
+  margin: 0 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,.1);
+}
+
+.admin h3 {
+  margin-top: 0;
+}
+
+.admin input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.admin button {
+  width: 100%;
+  padding: 10px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+}
+
+.judul {
+  text-align: center;
+}
+
+.admin {
+  background: white;
+  padding: 15px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+.admin input, .admin button {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 8px;
+}
+
+.produk-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.wa {
+  display: inline-block;
+  background: #25D366;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+}
+

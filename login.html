@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin - UMKM</title>
+    <style>
+        /* Desain Background & Layout */
+        body { 
+            background-color: #7cfc00; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            margin: 0; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
+
+        /* Kotak Login Kuning */
+        .login-box { 
+            background-color: #ffeb3b; 
+            padding: 40px; 
+            border-radius: 20px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
+            text-align: center; 
+            width: 320px; 
+        }
+
+        /* --- EFEK KEDAP KEDIP --- */
+        .blink-text {
+            font-size: 24px;
+            font-weight: bold;
+            color: #eb0aff;
+            margin-bottom: 20px;
+            animation: kedapKedip 1s infinite; /* Mengulang selamanya setiap 1 detik */
+        }
+
+        @keyframes kedapKedip {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        /* ------------------------ */
+
+        input { 
+            width: 100%; 
+            padding: 12px; 
+            margin: 10px 0; 
+            border: 2px solid #de1cbe; 
+            border-radius: 10px; 
+            box-sizing: border-box; 
+            outline: none;
+        }
+
+        input:focus { border-color: #ff2d2d; }
+
+        button { 
+            width: 100%; 
+            padding: 12px; 
+            background-color: #ff2d2d; 
+            color: rgb(9, 15, 243); 
+            border: none; 
+            border-radius: 10px; 
+            cursor: pointer; 
+            font-weight: bold; 
+            font-size: 16px;
+            margin-top: 15px; 
+            transition: 0.3s;
+        }
+
+        button:hover { background-color: #49e208; transform: scale(1.02); }
+    </style>
+</head>
+<body>
+
+<div class="login-box">
+    <div class="blink-text">Login Admin</div>
+    
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="cekLogin()">Masuk</button>
+</div>
+
+<script>
+    function cekLogin() {
+        const user = document.getElementById('username').value;
+        const pass = document.getElementById('password').value;
+
+        // Logika penghubung ke halaman admin
+        if (user === "admin" && pass === "12345") {
+            alert("Login Berhasil!");
+            window.location.href = "admin.html"; // Pastikan file admin.html sudah dibuat
+        } else {
+            alert("Username atau Password salah!");
+              location.href = "dashboard.html";
+        }
+
+        
+    }
+</script>
+
+</body>
+</html>
+
+ <!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>Menambahkan Produk</title>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #cd2222;
+  margin: 0;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.katalog {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  gap: 15px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 10px;
+  text-align: center;
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.whatsapp {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: #25D366;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+}
+
+/* tombol bawah */
+.next {
+  text-align: center;
+  margin: 30px;
+}
+
+.next button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* admin */
+#admin {
+  display: none;
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+#admin input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+}
+
+#admin button {
+  padding: 8px 15px;
+}
+
+.edit { background: orange; color: white; }
+.hapus { background: red; color: white; }
+</style>
+</head>
+
